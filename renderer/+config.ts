@@ -1,4 +1,3 @@
-import type { Config } from 'vike/types'
 import { ssrEffect } from './Effect'
 
 export default {
@@ -16,9 +15,6 @@ export default {
       env: { config: true },
       effect: ssrEffect,
     },
-    // onAfterRenderClient: {
-    //   env: { client: true },
-    // },
     VikeReactQueryWrapper: {
       env: { client: true, server: true },
     },

@@ -1,4 +1,4 @@
-import { ReactNode, useMemo } from 'react'
+import { ReactNode } from 'react'
 import { PageContextProvider } from '@/hooks/use-page-context'
 import { ConfigProvider } from 'antd'
 import { DefaultLayout } from '@/layout/default-layout'
@@ -16,7 +16,7 @@ export function ServerPageLayout({ pageContext }) {
   return (
     // <React.StrictMode>
     <PageContextProvider pageContext={pageContext}>
-      <ConfigProvider prefixCls="aeui">
+      <ConfigProvider prefixCls="online-wallet">
         <ErrorBoundary>
           <VikeReactQueryWrapper>
             {pageContext.config.Layout === false ? Page ? <Page /> : null : <Layout>{Page ? <Page /> : null}</Layout>}
