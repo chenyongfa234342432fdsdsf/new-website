@@ -77,11 +77,6 @@ html {
     background: transparent;
   } */
 
-  /* firefox */
-  tbody {
-    scrollbar-width: thin;
-  }
-
   /* 以便下为自定义 scrollbar class 以便复用 */
 
   /* 自定义 scrollbar class */
@@ -98,46 +93,6 @@ html {
     ::-webkit-scrollbar-thumb {
       border-radius: 29px;
     }
-  }
-
-  /* 隐藏 scrollbar */
-  .no-scrollbar {
-    /* Firefox */
-    scrollbar-width: none;
-
-    /* IE and Edge */
-    -ms-overflow-style: none;
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    ::-moz-scrollbar {
-      display: none;
-    }
-  }
-
-  /* 在不 active 时隐藏 scrollbar，配合 scrollbar custom 一起使用 */
-  .hide-scrollbar-on-not-active {
-    &:not(:hover) {
-      /* firefox */
-      scrollbar-color: transparent transparent;
-
-      ::-webkit-scrollbar {
-        @apply bg-transparent;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        @apply bg-transparent;
-      }
-    }
-  }
-
-  .reduce-font-size {
-    transform: scale(0.83);
-    transform-origin: left;
-
-    @apply text-xs;
   }
 }
 
