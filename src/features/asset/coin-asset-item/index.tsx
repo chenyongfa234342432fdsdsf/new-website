@@ -19,7 +19,9 @@ export default function CoinAssetItem(props: Props) {
         <div className="ml-4">{assetItem?.currency}</div>
       </div>
       <div>
-        <div className="text-right">{formatNumbers(assetItem?.amount, assetItem?.coinDetail?.display_decimal)}</div>
+        <div className="text-right">
+          {formatNumbers(assetItem?.amount)} {assetItem?.coinDetail?.coin_id}
+        </div>
         <div className="mt-0.5 text-gray-400 text-right">$ {formatNumbers(getComputedAmount(assetItem))}</div>
       </div>
     </div>

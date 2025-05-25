@@ -106,100 +106,6 @@ module.exports = {
             '33',
             '34',
           ],
-          /* 线条 Line */
-          line_color_03: 'line_color_03',
-          line_color_02: 'line_color_02',
-          line_color_01: 'line_color_01',
-          line_color_04: 'line_color_04',
-
-          /* 填充 Icon */
-          icon_color: 'icon_color',
-          icon_color_01: 'icon_color_01',
-          icon_color_02: 'icon_color_02',
-          icon_color_03: 'icon_color_03',
-
-          /* 文字 Text */
-          text_color_01: 'text_color_01',
-          text_color_02: 'text_color_02',
-          text_color_03: 'text_color_03',
-          text_color_04: 'text_color_04',
-          text_color_05: 'text_color_05',
-          text_color_06: 'text_color_06',
-          text_color_07: 'text_color_07',
-          text_contrast_low: 'text_contrast_low',
-          text_contrast_high: 'text_contrast_high',
-  
-          /* 层级用色 Hierarchy */
-          card_background_color_02: 'card_background_color_02',
-          card_background_color_03: 'card_background_color_03',
-          card_background_color_04: 'card_background_color_04',
-          bg_sr_color: 'bg_sr_color',
-          card_background_color_01: 'card_background_color_01',
-          bg_color: 'bg_color',
-          bg_color_02: 'bg_color_02',
-          bg_color_03: 'bg_color_03',
-          bg_button_disabled: 'bg_button_disabled',
-          toast_bg_color: 'toast_bg_color',
-          card_background_color_05: 'card_background_color_05',
-
-          /* 提示 Tips */
-          tips_color: 'tips_color',
-          tips_color_hover: 'tips_color_hover',
-          tips_color_animate: 'tips_color_animate',
-          tips_color_disable: 'tips_color_disable',
-          tips_color_special: 'tips_color_special',
-
-          /* toast */
-          /* 辅助色 */
-          auxiliary_01_color: 'auxiliary_01_color',
-          auxiliary_01_color_hover: 'auxiliary_01_color_hover',
-          auxiliary_01_color_animate: 'auxiliary_01_color_animate',
-          auxiliary_01_color_special: 'auxiliary_01_color_special',
-          auxiliary_01_color_disable: 'auxiliary_01_color_disable',
-          auxiliary_01_color_light_bg: 'auxiliary_01_color_light_bg',
-          auxiliary_01_color_trans_bg: 'auxiliary_01_color_trans_bg',
-          auxiliary_02_color: 'auxiliary_02_color',
-          auxiliary_02_color_hove: 'auxiliary_02_color_hove',
-          auxiliary_02_color_animate: 'auxiliary_02_color_animate',
-          auxiliary_02_color_special: 'auxiliary_02_color_special',
-          auxiliary_02_color_disable: 'auxiliary_02_color_disable',
-          auxiliary_02_color_light_bg: 'auxiliary_02_color_light_bg',
-          auxiliary_icon_color_01: 'auxiliary_icon_color_01',
-          auxiliary_color_special: 'auxiliary_color_special',
-          auxiliary_color_02: 'auxiliary_color_02',
-          text_label_color_01: 'text_label_color_01',
-          auxiliary_icon_color_02: 'auxiliary_icon_color_02',
-          text_label_color_02: 'text_label_color_02',
-          auxiliary_color_special_02: 'auxiliary_color_special_02',
-          auxiliary_color_special_03: 'auxiliary_color_special_03',
-
-          /* 按钮色 */
-          button_color_02: 'button_color_02',
-          button_color_hover_02: 'button_color_hover_02',
-          button_color_animate_02: 'button_color_animate_02',
-          button_color_special_02: 'button_color_special_02',
-          bg_button_disabled: 'bg_button_disabled',
-          button_color_buy_up: 'button_color_buy_up',
-          button_color_sell_down: 'button_color_sell_down',
-          button_color_02_trans_bg: 'button_color_02_trans_bg',
-
-          /* 文字色 */
-          text_color_01: 'text_color_01',
-          text_color_02: 'text_color_02',
-          text_color_03: 'text_color_03',
-          text_color_04: 'text_color_04',
-          text_color_05: 'text_color_05',
-          text_color_06: 'text_color_06',
-          text_color_07: 'text_color_07',
-
-          /* 背景色 */
-          bg_color: 'bg_color',
-          card_background_color: 'card_background_color',
-          card_background_color_01: 'card_background_color_01',
-          card_background_color_03: 'card_background_color_03',
-          card_background_color_04: 'card_background_color_04',
-          card_background_color_05: 'card_background_color_05',
-        
         }),
       },
 
@@ -217,37 +123,8 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
+    plugin(function ({ addComponents }) {
       addComponents({
-      })
-    }),
-    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
-      // 渐变边框需要单独的背景色配置
-      const colors = theme('colors')
-      const brandBgUtilities = Object.keys(colors).reduce((acc, color) => {
-        acc[`.brand-border-bg-color-${color}`] = {
-          '--brand-border-bg-color': `var(--${color})`,
-        }
-        return acc
-      }, {})
-      addUtilities(brandBgUtilities)
-      addComponents({
-        '.border-brand_color': {
-          backgroundImage: `linear-gradient(to right, var(--brand-border-bg-color, var(--card_background_color)), var(--brand-border-bg-color, var(--card_background_color))), linear-gradient(to right, var(--brand_color_start), var(--brand_color_end))`,
-          backgroundClip: `padding-box, border-box`,
-          backgroundOrigin: `padding-box, border-box`,
-          border: `1px solid transparent`,
-        },
-      })
-    }),
-    plugin(function ({ addVariant }) {
-      // 添加 press-active 变体
-      addVariant('press-active', '&.ae-press-active')
-      // 添加 zh 变体，效果为 zh:text-xl 变为 lang*=zh .zh:text-xl {}
-      addVariant('zh', ({ modifySelectors, separator }) => {
-        modifySelectors(({ selector }) => {
-          return `html[lang*=zh] &`;
-        });
       })
     }),
   ],
