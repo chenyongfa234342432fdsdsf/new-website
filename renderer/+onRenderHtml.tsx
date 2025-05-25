@@ -23,9 +23,6 @@ export const onRenderHtml = async (pageContext): ReturnType<OnRenderHtmlAsync> =
         <meta charset="UTF-8" />
         <meta name="google" content="notranslate">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-        <link rel="preload" href="https://d2nulvshde1t9q.cloudfront.net/brand/fonts/Saira-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-        <link rel="preload" href="https://d2nulvshde1t9q.cloudfront.net/brand/fonts/Saira-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-        <link rel="preload" href="https://d2nulvshde1t9q.cloudfront.net/brand/fonts/Saira-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
       </head>
       <body>
         <div id="react-root">${pageView}</div>
