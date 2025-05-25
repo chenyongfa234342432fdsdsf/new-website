@@ -16,7 +16,7 @@ export default function CoinAssetItem(props: Props) {
     <div className="bg-white h-[88px] mx-3 rounded-xl my-4 shadow-sm flex items-center justify-between px-4">
       <div className="flex items-center">
         <img src={assetItem?.coinDetail?.colorful_image_url} alt="" className="rounded-full w-12" />
-        <div className="ml-4">{assetItem?.currency}</div>
+        <div className="ml-4">{assetItem?.coinDetail?.name}</div>
       </div>
       <div>
         <div className="text-right">

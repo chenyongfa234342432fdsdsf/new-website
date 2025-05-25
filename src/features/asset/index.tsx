@@ -43,9 +43,9 @@ export default function Asset() {
     }
   }
 
-  const getJudgeUseCurrency = (rates: Rates[], amount) => {
+  const getJudgeUseCurrency = (rates: Rates[]) => {
     /** 我看有的币对有多个汇率，没太清楚到底是取哪个，但是我看大部分只有一个 所以默认取第一个 */
-    return rates?.[0]?.rate
+    return rates?.[0]?.rate || 0
   }
 
   useUpdateEffect(() => {
@@ -54,10 +54,11 @@ export default function Asset() {
       let totalAssetsNumber = 0
 
       const assetResult = walletBalanceList?.map(item => {
+        /** 获取币种汇率 */
         const rate =
           getJudgeUseCurrency(
-            liveRatesList?.find(ratesItem => ratesItem?.from_currency === item?.currency)?.rates || [],
-            item?.amount
+            liveRatesList?.find(ratesItem => ratesItem?.from_currency === item?.currency)?.rates || []
+            // item?.amount
           ) || '0'
 
         totalAssetsNumber = getSafeDecimal(totalAssetsNumber)
