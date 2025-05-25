@@ -22,21 +22,21 @@ export default function Asset() {
   const [assetSetList, setAssetSetList] = useState<AssetSetListItem[]>([])
   /** 总资产 */
   const [totalAssets, setTotalAssets] = useState<number>(0)
-  const getWalletBalanceRequestFn = async () => {
+  const fetchWalletBalanceList = async () => {
     const { ok, wallet } = await getWalletBalanceRequest()
     if (ok && wallet && Array.isArray(wallet)) {
       setWalletBalanceList(wallet)
     }
   }
 
-  const getLiveRateItemListRequestFn = async () => {
+  const fetchLiveRatesList = async () => {
     const { ok, tiers } = await getLiveRateItemListRequest()
     if (ok && tiers && Array.isArray(tiers)) {
       setLiveRatesList(tiers)
     }
   }
 
-  const getAllCurrenciesRequestFn = async () => {
+  const fetchAllCurrenciesList = async () => {
     const { ok, currencies } = await getAllCurrenciesRequest()
     if (ok && currencies && Array.isArray(currencies)) {
       setAllCurrenciesList(currencies)
@@ -79,9 +79,9 @@ export default function Asset() {
   }, [walletBalanceList, liveRatesList, allCurrenciesList])
 
   useMount(() => {
-    getLiveRateItemListRequestFn()
-    getWalletBalanceRequestFn()
-    getAllCurrenciesRequestFn()
+    fetchLiveRatesList()
+    fetchWalletBalanceList()
+    fetchAllCurrenciesList()
   })
 
   return (
