@@ -94,7 +94,7 @@ export default function Asset() {
             <span className="pr-1 font-bold text-gray-500">USD</span>
           </div>
         </div>
-        <div className="bg-gray-100 rounded-t-xl pt-4 pb-3 h-[560px]">
+        <div className="bg-gray-100 rounded-t-xl py-2.5 h-[560px]">
           {assetSetList?.map(item => {
             return (
               <div key={item?.currency}>
