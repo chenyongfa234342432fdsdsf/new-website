@@ -1,0 +1,40 @@
+{
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "html": "HTML"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.formatOnSave": true
+  },
+  "css.validate": false,
+  "postcss.validate": false,
+  "stylelint.validate": ["css", "postcss"],
+  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.displayLanguage": "zh-MY",
+  "i18n-ally.sourceLanguage": "zh-MY",
+  "i18n-ally.keystyle": "flat",
+  "i18n-ally.enabledParsers": ["json"],
+  "i18n-ally.enabledFrameworks": ["lingui"],
+  "git.mergeEditor": false,
+  "todohighlight.keywords": [
+    {
+      "text": "TIP:",
+      "color": "#fff",
+      "backgroundColor": "#FF4B2F"
+    }
+  ],
+  "files.eol": "\n"
+}

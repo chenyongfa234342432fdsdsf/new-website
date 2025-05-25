@@ -1,0 +1,5 @@
+:local(.scoped) {
+  height: 100vh;
+
+  @apply overflow-hidden;
+}

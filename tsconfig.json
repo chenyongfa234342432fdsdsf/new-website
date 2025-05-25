@@ -1,0 +1,14 @@
+{
+  "extends": "base-ts-config",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "skipLibCheck": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["node", "vite/client"]
+  },
+  "include": ["./**/*", "./package.json", "./src/**/*", "./server/**/*"],
+  "exclude": ["node_modules", "assets", "dist"],
+  "extensions": [".ts", ".tsx", ".js", ".jsx", ".cts"]
+}

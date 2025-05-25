@@ -1,0 +1,166 @@
+body {
+  /* -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  } */
+}
+
+html {
+  /* 因为有缩放，子元素设置 100vh 缩放时会有问题，所以加上这个 */
+  @apply h-full;
+
+  body {
+    @apply h-full;
+
+    #react-root {
+      /* 下面还有两个 div 才是最后的页面 div */
+      @apply h-full;
+
+      > div {
+        @apply h-full;
+
+        >div {
+          @apply h-full;
+        }
+      }
+    }
+  }
+
+  font-family: AEFont, -apple-system, system-ui, 'PingFang SC', 'Microsoft Yahei', 'Heiti SC', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+
+  --scroll-bar-width: 6px;
+  --scroll-bar-width-custom: 6px;
+
+  /* --scroll-bar-width: 0; */
+
+  /* firefox */
+  scrollbar-width: auto;
+
+  /* Chrome, Safari */
+  ::-webkit-scrollbar {
+    width: var(--scroll-bar-width);
+    height: var(--scroll-bar-width);
+
+    @apply bg-card_background_color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-card_background_color_03;
+
+    border-radius: 40px;
+  }
+
+  ::-webkit-scrollbar-corner {
+    @apply bg-transparent;
+  }
+
+  /* scrollbar-width: 4px;
+
+  ::-webkit-scrollbar {
+    width: var(--scroll-bar-width);
+    height: var(--scroll-bar-width);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+
+    @apply bg-icon_color_04;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  } */
+
+  /* firefox */
+  tbody {
+    scrollbar-width: thin;
+  }
+
+  /* 以便下为自定义 scrollbar class 以便复用 */
+
+  /* 自定义 scrollbar class */
+  .scrollbar-custom {
+    scrollbar-width: thin;
+
+    ::-webkit-scrollbar {
+      /* display: block; */
+
+      width: var(--scroll-bar-width-custom);
+      height: var(--scroll-bar-width-custom);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 29px;
+    }
+  }
+
+  /* 隐藏 scrollbar */
+  .no-scrollbar {
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE and Edge */
+    -ms-overflow-style: none;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    ::-moz-scrollbar {
+      display: none;
+    }
+  }
+
+  /* 在不 active 时隐藏 scrollbar，配合 scrollbar custom 一起使用 */
+  .hide-scrollbar-on-not-active {
+    &:not(:hover) {
+      /* firefox */
+      scrollbar-color: transparent transparent;
+
+      ::-webkit-scrollbar {
+        @apply bg-transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        @apply bg-transparent;
+      }
+    }
+  }
+
+  .reduce-font-size {
+    transform: scale(0.83);
+    transform-origin: left;
+
+    @apply text-xs;
+  }
+}
+
+body {
+  min-width: 375px;
+  font-size: 12px;
+  /* stylelint-disable-next-line max-line-length */
+  font-family: AEFont, -apple-system, system-ui, 'PingFang SC', 'Microsoft Yahei', 'Heiti SC', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+
+  /* stylelint-disable-next-line max-line-length */
+  --pennant-font-family-base: -apple-system, system-ui, 'PingFang SC', 'Microsoft Yahei', 'Heiti SC', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+  /* stylelint-disable-next-line max-line-length */
+  --pennant-font-family-monospace: -apple-system, system-ui, 'PingFang SC', 'Microsoft Yahei', 'Heiti SC', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+
+  /*
+  * tabular-nums = fixed all font number width
+   */
+  @apply tabular-nums bg-card_background_color text-text_color_01 !important;
+
+  img {
+    /*
+    * prevent img highlight
+    */
+    user-select: none;
+  }
+}

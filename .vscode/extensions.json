@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "huacnlee.autocorrect",
+    "stylelint.vscode-stylelint",
+    "heybourn.headwind",
+    "algesthesiah.lazy-i18n",
+    "algesthesiah.i18n-ally-lingui",
+    "wayou.vscode-todo-highlight",
+    "vunguyentuan.vscode-postcss"
+  ]
+}
